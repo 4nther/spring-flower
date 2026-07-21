@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%" opacity="0.18">
+  <g fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Lily Petals -->
+    <path d="M 350 120 C 320 60, 240 50, 220 120 C 260 150, 310 160, 350 120 Z" />
+    <path d="M 350 120 C 420 100, 460 160, 400 210 C 360 180, 340 150, 350 120 Z" />
+    <path d="M 350 120 C 380 200, 320 260, 270 210 C 280 160, 310 130, 350 120 Z" />
+    <path d="M 350 120 C 280 150, 220 220, 250 280 C 290 260, 320 190, 350 120 Z" />
+    <path d="M 350 120 C 390 50, 460 50, 450 120 C 410 130, 380 120, 350 120 Z" />
+    <!-- Stamen / Center -->
+    <path d="M 350 120 Q 330 100 310 95" />
+    <path d="M 350 120 Q 360 80 375 75" />
+    <path d="M 350 120 Q 380 110 400 105" />
+    <circle cx="310" cy="95" r="3" fill="#000" />
+    <circle cx="375" cy="75" r="3" fill="#000" />
+    <circle cx="400" cy="105" r="3" fill="#000" />
+    <!-- Stem -->
+    <path d="M 310 180 Q 250 280 200 380" stroke-width="2" />
+    <path d="M 260 260 Q 200 250 150 280 Q 210 300 260 260 Z" />
+  </g>
+</svg>
