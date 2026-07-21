@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Spring Flower</title>
   
-  <!-- Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
@@ -18,27 +17,26 @@
     }
 
     body {
-  background-color: #ffffff;
-  color: #111111;
-  font-family: 'Playfair Display', Georgia, serif;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem;
-      
-  background-image: url('lily.svg');
-  background-repeat: no-repeat;
-  background-position: right -100px top -50px; 
-  background-size: 650px; 
-  background-attachment: fixed;
-}
+      background-color: #ffffff;
+      color: #111111;
+      font-family: 'Playfair Display', Georgia, serif;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+
+      /* Desktop / Tablet Background Styling */
+      background-image: url('lily.svg');
+      background-repeat: no-repeat;
+      background-position: right -100px top -50px;
+      background-size: 650px;
+      background-attachment: fixed;
+    }
 
     .container {
-      max-width: 480px;
+      max-width: 520px;
       width: 100%;
-      /* shadow */
-      text-shadow: 0 1px 1px rgba(255,255,255,0.8);
     }
 
     .poem {
@@ -46,7 +44,7 @@
       line-height: 1.8;
       font-weight: 400;
       letter-spacing: 0.02em;
-      text-align: center; 
+      text-align: left;
     }
 
     .stanza {
@@ -59,6 +57,20 @@
 
     .stanza:last-child {
       margin-bottom: 0;
+    }
+
+    /* mobile optimization */
+    @media (max-width: 600px) {
+      body {
+        background-size: 380px;
+        background-position: right -90px top -40px;
+        padding: 1.5rem;
+      }
+
+      .poem {
+        font-size: 1.05rem;
+        line-height: 1.7;
+      }
     }
   </style>
 </head>
