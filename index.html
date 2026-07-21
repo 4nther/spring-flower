@@ -26,12 +26,11 @@
       align-items: center;
       padding: 2rem;
 
-      /* Desktop / Tablet Background Styling */
-      background-image: url('lily.svg');
-      background-repeat: no-repeat;
-      background-position: right -100px top -50px;
-      background-size: 650px;
-      background-attachment: fixed;
+      background-image: url('sun.svg'), url('lily.svg');
+      background-repeat: no-repeat, no-repeat;
+      background-position: left -30px top -30px, right -80px bottom -60px;
+      background-size: 320px, 600px;
+      background-attachment: fixed, fixed;
     }
 
     .container {
@@ -62,8 +61,8 @@
     /* mobile optimization */
     @media (max-width: 600px) {
       body {
-        background-size: 380px;
-        background-position: right -90px top -40px;
+        background-size: 200px, 360px;
+        background-position: left -40px top -40px, right -90px bottom -40px;
         padding: 1.5rem;
       }
 
