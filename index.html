@@ -25,17 +25,17 @@
       --text-color: #111111;
       --divider-color: rgba(0, 0, 0, 0.25);
       --hover-accent: #555555;
-      --bg-sun: url('sun.svg');
+      --bg-celestial: url('sun.svg');
       --bg-lily: url('lily.svg');
     }
 
-    /* Dark Theme Variables (Deep Near-Black + White Icons) */
+    /* Dark Theme Variables (Crescent Moon + White Lilies) */
     [data-theme="dark"] {
       --bg-color: #080808;
       --text-color: #f5f5f5;
       --divider-color: rgba(255, 255, 255, 0.3);
       --hover-accent: #ffffff;
-      --bg-sun: url('sun-dark.svg');
+      --bg-celestial: url('moon-dark.svg');
       --bg-lily: url('lily-dark.svg');
     }
 
@@ -56,8 +56,8 @@
       padding: 4rem 2rem;
       transition: background-color 0.4s ease, color 0.4s ease;
 
-      /* Dynamic SVG Background Switcher */
-      background-image: var(--bg-sun), var(--bg-lily);
+      /* Dynamic Celestial & Floral Background Switcher */
+      background-image: var(--bg-celestial), var(--bg-lily);
       background-repeat: no-repeat, no-repeat;
       background-position: left -30px top -30px, right -100px bottom -80px;
       background-size: 320px, 750px;
@@ -128,7 +128,7 @@
       margin-bottom: 0;
     }
 
-    /* === FLEXBOX DROP CAP (PERFECT ALIGNMENT) === */
+    /* Flexbox Drop Cap */
     .first-line {
       display: flex;
       align-items: baseline;
