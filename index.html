@@ -5,10 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Spring Flower</title>
   
+  <!-- Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
-  <!-- Favicon Links -->
+
+  <!-- Custom Favicon Links -->
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
@@ -31,13 +33,22 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 2rem;
+      padding: 3rem 2rem;
 
+      /* Background Vectors */
       background-image: url('sun.svg'), url('lily.svg');
       background-repeat: no-repeat, no-repeat;
       background-position: left -30px top -30px, right -80px bottom -60px;
       background-size: 320px, 600px;
       background-attachment: fixed, fixed;
+
+      /* Smooth Fade In */
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
     .container {
@@ -53,8 +64,12 @@
       text-align: left;
     }
 
+    .poem-section {
+      margin-bottom: 3rem;
+    }
+
     .stanza {
-      margin-bottom: 2rem;
+      margin-bottom: 1.8rem;
     }
 
     .stanza p {
@@ -65,17 +80,30 @@
       margin-bottom: 0;
     }
 
-    /* mobile optimization */
+    /* Minimalist Divider */
+    .divider {
+      text-align: center;
+      margin: 3.5rem 0;
+      opacity: 0.25;
+      font-size: 0.9rem;
+      letter-spacing: 0.5em;
+    }
+
+    /* Mobile Responsive Tweaks */
     @media (max-width: 600px) {
       body {
         background-size: 200px, 360px;
         background-position: left -40px top -40px, right -90px bottom -40px;
-        padding: 1.5rem;
+        padding: 2rem 1.5rem;
       }
 
       .poem {
         font-size: 1.05rem;
         line-height: 1.7;
+      }
+
+      .divider {
+        margin: 2.5rem 0;
       }
     }
   </style>
@@ -83,26 +111,50 @@
 <body>
 
   <main class="container">
-    <div class="poem">
-      <div class="stanza">
-        <p>Oh spring flower,</p>
-        <p>Look once toward the sun you know,</p>
-        <p>Keep the old field's scent linger awhile.</p>
-        <p>When the breeze comes calling, go</p>
-        <p>I'll wander somewhere with you</p>
-      </div>
+    <article class="poem">
+      
+      <!-- First Poem (Inspiration) -->
+      <section class="poem-section">
+        <div class="stanza">
+          <p>Come apart,</p>
+          <p>Oh spring flower.</p>
+          <p>One sprung to life</p>
+          <p>From a budding clover.</p>
+          <p>Sway in the breeze un-stiff.</p>
+        </div>
 
-      <div class="stanza">
-        <p>Bloom strange among stranger flowers,</p>
-        <p>Let the new earth know your roots.</p>
-        <p>And should you reach beneath it,</p>
-        <p>You might find mine,</p>
-        <p>Still tangled in yours.</p>
-      </div>
-      <footer class="date">
-        22/07/2026
-      </footer>
-    </div>
+        <div class="stanza">
+          <p>Sow yourself in a barren land.</p>
+          <p>Detaching you at the stems,</p>
+          <p>Wander the sky unplanned.</p>
+          <p>Planting at earth's whims,</p>
+          <p>Go together.</p>
+        </div>
+      </section>
+
+      <!-- Minimal Divider -->
+      <div class="divider">• • •</div>
+
+      <!-- Second Poem (Response) -->
+      <section class="poem-section">
+        <div class="stanza">
+          <p>Oh spring flower,</p>
+          <p>Look once toward the sun you know,</p>
+          <p>Keep the old field's scent linger awhile.</p>
+          <p>When the breeze comes calling, go</p>
+          <p>I'll wander somewhere with you</p>
+        </div>
+
+        <div class="stanza">
+          <p>Bloom strange among stranger flowers,</p>
+          <p>Let the new earth know your roots.</p>
+          <p>And should you reach beneath it,</p>
+          <p>You might find mine,</p>
+          <p>Still tangled in yours.</p>
+        </div>
+      </section>
+
+    </article>
   </main>
 
 </body>
