@@ -19,22 +19,18 @@
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 
   <style>
-    /* CSS Variables */
     :root {
       --bg-color: #ffffff;
       --text-color: #111111;
       --divider-color: rgba(0, 0, 0, 0.25);
       --hover-accent: #555555;
-      --svg-filter: none;
     }
 
     [data-theme="dark"] {
-      --bg-color: #0d0d0d;
+      --bg-color: #0a0a0a;
       --text-color: #f0f0f0;
       --divider-color: rgba(255, 255, 255, 0.3);
       --hover-accent: #ffffff;
-      /* Inverts black SVGs to sharp white and boosts visibility */
-      --svg-filter: invert(1) brightness(1.8) opacity(0.55);
     }
 
     * {
@@ -54,27 +50,27 @@
       padding: 4rem 2rem;
       transition: background-color 0.4s ease, color 0.4s ease;
 
-      /* Background Vectors with Dynamic Filter */
+      /* SVG Backgrounds */
       background-image: url('sun.svg'), url('lily.svg');
       background-repeat: no-repeat, no-repeat;
       background-position: left -30px top -30px, right -100px bottom -80px;
       background-size: 320px, 750px;
       background-attachment: fixed, fixed;
-      filter: var(--svg-filter);
 
       /* Smooth Fade In */
       animation: fadeIn 1.5s ease-in-out;
     }
 
-    /* Container cancels out filter so text remains untouched */
-    .container, .theme-toggle {
-      filter: var(--svg-filter); /* Neutralize body filter for content */
+    /* DARK MODE GLOW EFFECT FOR SUN & LILIES */
+    [data-theme="dark"] {
+      /* Inverts dark lines to bright white + adds soft white glow */
+      filter: invert(1) drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));
     }
 
-    /* Reset content filters */
+    /* Neutralize filter for text container & button so text doesn't invert */
     [data-theme="dark"] .container,
     [data-theme="dark"] .theme-toggle {
-      filter: invert(1) hue-rotate(180deg) brightness(0.65);
+      filter: invert(1) hue-rotate(180deg);
     }
 
     @keyframes fadeIn {
@@ -119,7 +115,7 @@
       margin-bottom: 3rem;
     }
 
-    /* Stanza Hover Accent */
+    /* Stanza Styles */
     .stanza {
       margin-bottom: 1.8rem;
       transition: transform 0.3s ease, color 0.3s ease;
@@ -138,19 +134,23 @@
       margin-bottom: 0;
     }
 
-    /* === CROSS-BROWSER SPAN DROP CAP (WORKS IN FIREFOX) === */
-    .drop-cap-container {
-      position: relative;
+    /* === FLEXBOX DROP CAP (CROSS-BROWSER PERFECT ALIGNMENT) === */
+    .first-line {
+      display: flex;
+      align-items: baseline;
+      margin-bottom: 0.3rem;
     }
 
     .drop-cap {
-      font-size: 3.4rem;
-      line-height: 0.8;
-      float: left;
-      margin-right: 0.4rem;
-      margin-top: 0.1rem;
+      font-size: 3.6rem;
+      line-height: 0.75;
       font-weight: 600;
-      display: inline-block;
+      margin-right: 0.4rem;
+      align-self: flex-start;
+    }
+
+    .first-line-text {
+      font-size: 1.25rem;
     }
 
     /* Minimalist Divider */
@@ -181,8 +181,12 @@
       }
 
       .drop-cap {
-        font-size: 2.7rem;
+        font-size: 2.8rem;
         margin-right: 0.3rem;
+      }
+
+      .first-line-text {
+        font-size: 1.05rem;
       }
 
       .divider {
@@ -201,8 +205,11 @@
       
       <!-- First Poem (Inspiration) -->
       <section class="poem-section">
-        <div class="stanza drop-cap-container">
-          <p><span class="drop-cap">C</span>ome apart,</p>
+        <div class="stanza">
+          <div class="first-line">
+            <span class="drop-cap">C</span>
+            <span class="first-line-text">ome apart,</span>
+          </div>
           <p>Oh spring flower.</p>
           <p>One sprung to life</p>
           <p>From a budding clover.</p>
@@ -223,8 +230,11 @@
 
       <!-- Second Poem (Response) -->
       <section class="poem-section">
-        <div class="stanza drop-cap-container">
-          <p><span class="drop-cap">O</span>h spring flower,</p>
+        <div class="stanza">
+          <div class="first-line">
+            <span class="drop-cap">O</span>
+            <span class="first-line-text">h spring flower,</span>
+          </div>
           <p>Look once toward the sun you know,</p>
           <p>Keep the old field's scent linger awhile.</p>
           <p>When the breeze comes calling, go</p>
